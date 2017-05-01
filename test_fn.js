@@ -10,8 +10,13 @@ test('minAndMax', function (t) {
 function square(x) {
     return x * x;
 }
+function timesTwo(x) {
+    return x * 2; 
+}
+
 test('mapArr', function (t) {
     t.deepEqual(func.map([1, 2, 3], square), [1, 4, 9] );
+    t.deepEqual(func.map([1, 2, 3], timesTwo), [2, 4, 6] );
 }); 
 
 
