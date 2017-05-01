@@ -1,9 +1,7 @@
 // import test from 'ava';
 
 module.exports = {
-    // license: function(plate) {
-    //     return /[A_Z0-9]{3} ?[A-Z0-9]{3}/.test(plate); 
-    //     }, 
+
     range: function (min, max) {
         let result = [];
         for (let i = min; i <= max; i++) {
@@ -23,7 +21,7 @@ module.exports = {
 filter: function (arr, func) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
-        if (func(arr[i])) { // dont need to put === true, 
+        if (func(arr[i])) { // dont need to put === true, it assumes true
             newArr.push(arr[i]);
         }
     }
@@ -61,7 +59,7 @@ some: function (arr, func) {
 
 find: function (arr, func) {
     for (let i = 0; i < arr.length; i++) {
-        console.log("i = " + i);
+        console.log("i = " + i); 
         if (func(arr[i])) {
             return arr[i];
         }
