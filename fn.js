@@ -18,7 +18,57 @@ module.exports = {
             newArr.push(func(arr[i]));
         }
         return newArr;
+}, 
+
+filter: function (arr, func) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i])) { // dont need to put === true, 
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}, 
+
+reduce: function reduce(arr, func, start) {
+    //reduce takes an array and updates it to single thing (not an array)
+    let current = start;
+    for (let i = 0; i < arr.length; i++) {
+        console.log('before function:' + current)
+        current = func(current, arr[i]);   //takes current value and uptdates it after the function is called with the two parameters
+        console.log('after function:' + current)
+    }
+    return current;
+}, 
+
+all: function (arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        if (!func(arr[i])) { //if one of the elements is false, return false
+            return false;
+        }
+    }
+    return true;
+}, 
+
+some: function (arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i])) {
+            return true;
+        }
+    }
+    return false;
+}, 
+
+find: function (arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log("i = " + i);
+        if (func(arr[i])) {
+            return arr[i];
+        }
+    }
+    return null;
 }
+
 };
 
 
@@ -46,9 +96,7 @@ module.exports = {
 
 // MAP --------------------------------------------------
 
-function square(x) {
-    return x * x;
-}
+
 
 // let arr = [1, 2, 3]
 
